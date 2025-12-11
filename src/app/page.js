@@ -550,7 +550,7 @@ export default function Home() {
                 {[ 
                   { 
                     icon: <FaFacebook style={{ color: "#1877F2" }} />, 
-                    link: "https://facebook.com" 
+                    link: "https://www.facebook.com/" 
                   },
                   { 
                     icon: <FaLinkedin style={{ color: "#0A66C2" }} />, 
