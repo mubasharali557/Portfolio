@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import Typed from "typed.js";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+
+
 
 import { 
   FaFacebook, 
@@ -23,7 +26,7 @@ import {
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-
+  const [sending, setSending] = useState(false);
   useEffect(() => {
     const typed = new Typed(".text", {
       strings: [
@@ -94,13 +97,27 @@ export default function Home() {
     }
   };
 
-  const handleSubmit = (e) => {
+ const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form submission logic here
-    alert('Message sent successfully!');
-    e.target.reset();
-  };
+    setSending(true);
 
+    try {
+      await emailjs.sendForm(
+        "service_zss5kpd",
+        "template_5rhzfxy",
+        e.target,
+        "JwWYq_RFEMIMVvESx"
+      );
+      alert("Message sent successfully!");
+      e.target.reset();
+    } catch (error) {
+      alert("Failed to send message, try again later.");
+      console.error(error);
+    } finally {
+      setSending(false);
+    }
+  };
+  
   return (
     <div className="font-sans bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white scroll-smooth">
       {/* Navbar */}
@@ -550,7 +567,7 @@ export default function Home() {
                 {[ 
                   { 
                     icon: <FaFacebook style={{ color: "#1877F2" }} />, 
-                    link: "https://www.facebook.com/" 
+                    link: "https://facebook.com" 
                   },
                   { 
                     icon: <FaLinkedin style={{ color: "#0A66C2" }} />, 
@@ -580,44 +597,25 @@ export default function Home() {
             </motion.div>
 
             {/* Contact Form */}
-            <motion.form 
+             <motion.form 
               onSubmit={handleSubmit}
               className="flex flex-col gap-4"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <input 
-                type="text" 
-                placeholder="Enter your Name" 
-                className="p-3 rounded bg-gray-700 border border-gray-600 focus:border-cyan-400 outline-none transition text-white placeholder-gray-400" 
-                required 
-              />
-              <input 
-                type="email" 
-                placeholder="Enter your Email" 
-                className="p-3 rounded bg-gray-700 border border-gray-600 focus:border-cyan-400 outline-none transition text-white placeholder-gray-400" 
-                required 
-              />
-              <input 
-                type="text" 
-                placeholder="Enter Your Subject" 
-                className="p-3 rounded bg-gray-700 border border-gray-600 focus:border-cyan-400 outline-none transition text-white placeholder-gray-400" 
-                required 
-              />
-              <textarea 
-                rows="5" 
-                placeholder="Enter Your Message" 
-                className="p-3 rounded bg-gray-700 border border-gray-600 focus:border-cyan-400 outline-none transition resize-none text-white placeholder-gray-400"
-                required
-              ></textarea>
+              <input name="from_name" type="text" placeholder="Enter your Name" className="p-3 rounded bg-gray-700 border border-gray-600 focus:border-cyan-400 outline-none transition text-white placeholder-gray-400" required />
+              <input name="from_email" type="email" placeholder="Enter your Email" className="p-3 rounded bg-gray-700 border border-gray-600 focus:border-cyan-400 outline-none transition text-white placeholder-gray-400" required />
+              <input name="subject" type="text" placeholder="Enter Your Subject" className="p-3 rounded bg-gray-700 border border-gray-600 focus:border-cyan-400 outline-none transition text-white placeholder-gray-400" required />
+              <textarea name="message" rows="5" placeholder="Enter Your Message" className="p-3 rounded bg-gray-700 border border-gray-600 focus:border-cyan-400 outline-none transition resize-none text-white placeholder-gray-400" required></textarea>
               <motion.button 
                 type="submit" 
-                className="bg-cyan-500 py-3 rounded hover:bg-cyan-600 transition shadow-lg font-semibold text-lg text-white"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className={`bg-cyan-500 py-3 rounded hover:bg-cyan-600 transition shadow-lg font-semibold text-lg text-white ${sending ? "opacity-70 cursor-not-allowed" : ""}`}
+                whileHover={{ scale: sending ? 1 : 1.05 }}
+                whileTap={{ scale: sending ? 1 : 0.95 }}
+                disabled={sending}
               >
-                Send Message
+                {sending ? "Sending..." : "Send Message"}
               </motion.button>
             </motion.form>
           </div>
@@ -626,6 +624,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
