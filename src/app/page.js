@@ -438,7 +438,19 @@ export default function Home() {
         desc: "Medmate Your online home for healthcare.Full MERN stack e-commerce store with admin panel, JWT auth, and payment system.",
         link: "https://medmate.com.au/"
       },
-      
+       {
+        img: "/image/p5.jpg",
+        title: "HS Electric Store",
+        desc: "HS Electric Store Your online home for healthcare.Full MERN stack e-commerce store with admin panel, JWT auth, and payment system.",
+        link: "https://hselectricstore.com/"
+      },
+{
+        img: "/image/p6.jpg",
+        title: "J.Jamshad",
+        desc: " J.Jamshad-website Store Your online home for healthcare.Full MERN stack e-commerce store with admin panel, JWT auth, and payment system.",
+        link: "https://j-jamshad-website.vercel.app/"
+      },
+
     ].map((project, i) => (
       <motion.div
         key={i}
