@@ -302,7 +302,7 @@ export default function Home() {
           <div className="relative w-72 h-72 md:w-96 md:h-96">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r blur-2xl animate-pulse"></div>
             <Image
-              src="/Mubashar.png"
+              src="/Mubashar.jpg"
               alt="Mubashar Ali - Full Stack Developer"
               width={384}
               height={384}
