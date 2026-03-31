@@ -15,9 +15,8 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Left Side - Copyright */}
         <p className="text-center md:text-left">
-          © {new Date().getFullYear()} Mubashar Ali. All rights reserved.
+         Mubashar Ali. All rights reserved.
         </p>
-
         {/* Right Side - Social Links */}
         <div className="flex gap-6 text-cyan-400 text-2xl">
           <a href="https://facebook.com" target="_blank" className="hover:text-white transition">

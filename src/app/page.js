@@ -205,7 +205,6 @@ export default function Home() {
         )}
       </nav>
 
-      {/* Home Section */}
       <section
         id="home"
         className="relative flex flex-col md:flex-row items-center justify-between px-6 md:px-16 min-h-screen pt-28 gap-10 bg-cover bg-center bg-no-repeat"
@@ -303,7 +302,7 @@ export default function Home() {
           <div className="relative w-72 h-72 md:w-96 md:h-96">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r blur-2xl animate-pulse"></div>
             <Image
-              src="/Mubashar.jpg"
+              src="/Mubashar.png"
               alt="Mubashar Ali - Full Stack Developer"
               width={384}
               height={384}
@@ -449,6 +448,18 @@ export default function Home() {
         title: "J.Jamshad",
         desc: " J.Jamshad-website Store Your online home for healthcare.Full MERN stack e-commerce store with admin panel, JWT auth, and payment system.",
         link: "https://j-jamshad-website.vercel.app/"
+      },
+      {
+        img: "/image/p7.png",
+        title: "Daymora-web-solutions",
+        desc: " Daymora Web Solutions is a professional web solutions company dedicated to helping businesses build a strong online presence and achieve their digital goals.",
+        link: "https://daymora-web-solutions.vercel.app/"
+      },
+      {
+        img: "/image/p8.jpg",
+        title: "Institute of Career Development",
+        desc: " Institute of Career Development web solutions company dedicated to helping businesses build a strong online presence and achieve their digital goals.",
+        link: "https://manzoor-dun.vercel.app/"
       },
 
     ].map((project, i) => (
