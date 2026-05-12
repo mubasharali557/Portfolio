@@ -414,6 +414,12 @@ export default function Home() {
     {/* Project 1 */}
     {[
       {
+        img: "/image/p9.jpg",
+        title: "AI Image  Website",
+        desc: "Full MERN stack Ai-image  store with admin panel, JWT auth, and payment system.",
+        link: "https://my-st-iy2.vercel.app/"
+      },
+      {
         img: "/image/p1.jpg",
         title: "E-Commerce Website",
         desc: "Full MERN stack e-commerce store with admin panel, JWT auth, and payment system.",
