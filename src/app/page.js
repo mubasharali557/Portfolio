@@ -283,7 +283,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="font-sans bg-gradient-to-br from-gray-950 via-black to-gray-950 text-white scroll-smooth selection:bg-cyan-500/30 selection:text-white">
+    <div className="font-sans bg-[#060913] text-gray-200 scroll-smooth selection:bg-indigo-500/30 selection:text-white">
       {/* Scroll progress bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500 origin-left z-[60]"
@@ -294,7 +294,7 @@ export default function Home() {
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-gray-950/80 backdrop-blur-xl shadow-lg shadow-black/30 border-b border-white/5"
+            ? "bg-[#060913]/90 backdrop-blur-xl shadow-lg shadow-black/40 border-b border-indigo-900/30"
             : "bg-transparent"
         }`}
       >
@@ -420,11 +420,11 @@ export default function Home() {
         className="relative flex flex-col md:flex-row items-center justify-between px-6 md:px-16 min-h-screen pt-32 md:pt-28 gap-14 bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{ backgroundImage: "url('/image/image.jpg')" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-cyan-950/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#060913]/95 via-[#060913]/80 to-[#060913]/95 pointer-events-none"></div>
 
         {/* Decorative glow blobs */}
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-500/20 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] pointer-events-none" />
 
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -537,8 +537,8 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="relative px-6 md:px-16 py-24 bg-gray-950 text-white overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <section id="about" className="relative px-6 md:px-16 py-24 bg-transparent text-white overflow-hidden border-t border-gray-800/50">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none" />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -581,7 +581,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="px-6 md:px-16 py-24 bg-gray-900">
+      <section id="services" className="px-6 md:px-16 py-24 bg-[#0b0e1b] border-t border-gray-800/50">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -605,7 +605,7 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.3 }}
                 custom={i}
                 whileHover={{ y: -8 }}
-                className="group relative bg-gray-800/60 p-8 rounded-2xl shadow-lg transition-all duration-300 text-center border border-gray-700/60 hover:border-cyan-500/40 hover:shadow-cyan-500/10 overflow-hidden"
+                className="group relative bg-[#111424] p-8 rounded-2xl shadow-lg transition-all duration-300 text-center border border-gray-800/80 hover:border-indigo-500/40 hover:shadow-indigo-500/10 overflow-hidden"
               >
                 <div
                   className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${service.accent} opacity-0 group-hover:opacity-15 blur-2xl transition-opacity duration-500 rounded-full`}
@@ -630,7 +630,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="px-6 md:px-16 py-24 bg-gray-950">
+      <section id="projects" className="px-6 md:px-16 py-24 bg-transparent border-t border-gray-800/50">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -655,7 +655,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.15 }}
               custom={i % 3}
               whileHover={{ y: -6 }}
-              className="group bg-gray-800/60 border border-gray-700/60 rounded-2xl overflow-hidden shadow-lg hover:border-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300"
+              className="group bg-[#111424] border border-gray-800/80 rounded-2xl overflow-hidden shadow-lg hover:border-indigo-500/40 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300"
             >
               <div className="relative overflow-hidden h-52">
                 <Image
@@ -701,7 +701,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="px-6 md:px-16 py-24 bg-gray-900">
+      <section id="skills" className="px-6 md:px-16 py-24 bg-[#0b0e1b] border-t border-gray-800/50">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -725,7 +725,7 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.5 }}
                 custom={i % 3}
                 whileHover={{ y: -4 }}
-                className="flex flex-col bg-gray-800/60 p-6 rounded-xl shadow-md hover:shadow-cyan-400/10 transition-all duration-300 border border-gray-700/60 hover:border-cyan-500/30"
+                className="flex flex-col bg-[#111424] p-6 rounded-xl shadow-md hover:shadow-indigo-400/10 transition-all duration-300 border border-gray-800/80 hover:border-indigo-500/40"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <i
@@ -756,7 +756,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="px-6 md:px-16 py-24 bg-gray-950">
+      <section id="contact" className="px-6 md:px-16 py-24 bg-transparent border-t border-gray-800/50">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
